@@ -1,26 +1,40 @@
-# Student Performance Prediction using Machine Learning
+# 🎓 Student Performance Predictor
 
-This project predicts student final marks using Machine Learning techniques.
+## 📌 Overview
 
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
+A simple machine learning web app that predicts student performance based on study hours, attendance, and previous marks using Streamlit.
 
-## Project Steps
-1. Data loading and preprocessing
-2. Feature selection
-3. Train-test split
-4. Model training using Linear Regression
-5. Model evaluation
-6. Result visualization
+🚀 Features
 
-## Output
-The model predicts student performance based on study time, failures, absences, and previous marks.
+- Predict student performance instantly
+- Simple and interactive web interface
+- No external model file required
+- Fast and lightweight application
+- Beginner-friendly implementatio
 
-## Author
+📊 Input Parameters
+
+The model takes the following inputs:
+
+- Study Hours
+- Attendance (%)
+- Previous Marks
+
+📈 Output
+- Predicted Student Score
+
+## 🛠️ Tech Used
+
+* Python
+* Streamlit
+* NumPy
+* Scikit-learn
+
+## 🌐 Live App
+
+https://student-performance-ai-jvba3ljx7nbwrc4thrpkzg.streamlit.app/
+
+## 👨‍💻 Author
+
 Rakshith Merugu
-# Student-Performance-Ai
-Machine Learning project to predict student performance
+
