@@ -17,7 +17,4 @@ y = np.array([55, 60, 65, 70, 75, 80, 85])
 model = LinearRegression()
 model.fit(X, y)
 
-# Save using joblib (better than pickle)
 joblib.dump(model, "model.pkl")
-
-print("New model.pkl created")
