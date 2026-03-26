@@ -1,13 +1,13 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.pkl")
 
-st.title("🎓 Student Performance Predictor")
+st.title("Student Performance Predictor")
 
 f1 = st.number_input("Study Hours")
-f2 = st.number_input("Attendance (%)")
+f2 = st.number_input("Attendance")
 f3 = st.number_input("Previous Marks")
 
 if st.button("Predict"):
