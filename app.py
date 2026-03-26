@@ -15,7 +15,7 @@ def predict():
     data = [float(x) for x in request.form.values()]
     prediction = model.predict([data])
 
-    return render_template('index.html', prediction_text=f"Result: {prediction[0]}")
+    return render_template('index.html', prediction_text=f"Predicted Score: {prediction[0]}")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=10000)
