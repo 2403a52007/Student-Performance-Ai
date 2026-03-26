@@ -1,19 +1,16 @@
-import gradio as gr
+import streamlit as st
 import pickle
 import numpy as np
 
 model = pickle.load(open("model.pkl", "rb"))
 
-def predict(f1, f2, f3):
+st.title("🎓 Student Performance Predictor")
+
+f1 = st.number_input("Study Hours")
+f2 = st.number_input("Attendance (%)")
+f3 = st.number_input("Previous Marks")
+
+if st.button("Predict"):
     data = np.array([[f1, f2, f3]])
     result = model.predict(data)
-    return f"Predicted Score: {result[0]}"
-
-interface = gr.Interface(
-    fn=predict,
-    inputs=["number","number","number"],
-    outputs="text",
-    title="Student Performance Predictor"
-)
-
-interface.launch()
+    st.success(f"Predicted Score: {result[0]}")
