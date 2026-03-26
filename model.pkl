@@ -1,8 +1,7 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
-import pickle
+import joblib
 
-# Features: [Study Hours, Attendance, Previous Marks]
 X = np.array([
     [2, 60, 50],
     [3, 65, 55],
@@ -13,15 +12,12 @@ X = np.array([
     [8, 90, 80]
 ])
 
-# Target: Final Score
 y = np.array([55, 60, 65, 70, 75, 80, 85])
 
-# Train model
 model = LinearRegression()
 model.fit(X, y)
 
-# Save model
-with open("model.pkl", "wb") as f:
-    pickle.dump(model, f)
+# Save using joblib (better than pickle)
+joblib.dump(model, "model.pkl")
 
-print("model.pkl created successfully")
+print("New model.pkl created")
