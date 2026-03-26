@@ -1,21 +1,19 @@
-from flask import Flask, render_template, request
+import gradio as gr
 import pickle
 import numpy as np
 
-app = Flask(__name__)
+model = pickle.load(open("model.pkl", "rb"))
 
-model = pickle.load(open('model.pkl', 'rb'))
+def predict(f1, f2, f3):
+    data = np.array([[f1, f2, f3]])
+    result = model.predict(data)
+    return f"Predicted Score: {result[0]}"
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+interface = gr.Interface(
+    fn=predict,
+    inputs=["number","number","number"],
+    outputs="text",
+    title="Student Performance Predictor"
+)
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = [float(x) for x in request.form.values()]
-    prediction = model.predict([data])
-
-    return render_template('index.html', prediction_text=f"Predicted Score: {prediction[0]}")
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+interface.launch()
