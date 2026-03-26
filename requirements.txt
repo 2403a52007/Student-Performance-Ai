@@ -1,4 +1,3 @@
-flask
+gradio
 numpy
 scikit-learn
-gunicorn
