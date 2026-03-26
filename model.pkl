@@ -2,11 +2,26 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 import pickle
 
-# sample data (you can change)
-X = [[1,2,3],[2,3,4],[3,4,5],[4,5,6]]
-y = [50,60,70,80]
+# Example dataset (you can change values)
+# Features: study hours, attendance, previous marks
+X = [
+    [2, 60, 50],
+    [3, 65, 55],
+    [4, 70, 60],
+    [5, 75, 65],
+    [6, 80, 70],
+    [7, 85, 75],
+    [8, 90, 80]
+]
 
+# Target: final score
+y = [55, 60, 65, 70, 75, 80, 85]
+
+# Train model
 model = LinearRegression()
-model.fit(X,y)
+model.fit(X, y)
 
-pickle.dump(model, open('model.pkl','wb'))
+# Save model
+pickle.dump(model, open("model.pkl", "wb"))
+
+print("model.pkl created successfully")
