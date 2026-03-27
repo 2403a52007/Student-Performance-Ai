@@ -10,7 +10,7 @@ A simple machine learning web app that predicts student performance based on stu
 - Simple and interactive web interface
 - No external model file required
 - Fast and lightweight application
-- Beginner-friendly implementatio
+- Beginner-friendly implementation
 
 📊 Input Parameters
 
